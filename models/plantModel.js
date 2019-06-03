@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var plantSchema = new Schema({
 
     route_name: {
-        type: RegExp,
+        type: String,
         requied: true,
         $regex: /^[a-z]+(_[a-z]+)*$/
     },
@@ -16,25 +16,25 @@ var plantSchema = new Schema({
     },
 
     scientific_name: {
-        type: RegExp,
+        type: String,
         requied: true,
         $regex: /^[A-Z][a-z]+ [^A-Z][a-z]+( var\. [a-z]*)?$/
     },
 
     genus: {
-        type: RegExp,
+        type: String,
         requied: true,
         $regex: /^[A-Z][a-z]+$/
     },
 
     species: {
-        type: RegExp,
+        type: String,
         required: true,
         $regex: /^[^A-Z][a-z]+$/
     },
 
     tropicos_name_id: {
-        type: int,
+        type: Number,
         required: true
     },
 

@@ -21,13 +21,13 @@ var moderatorSchema = new Schema({
     },
 
     email: {
-        type: regex,
+        type: String,
         required: true,
         $regex: /^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9\\-\\.]+)\\.([a-zA-Z]{2,5})$/
     },
 
     phone: {
-        type: regex,
+        type: String,
         required: true,
         $regex: /^\(?\d{3}\)?[\.\- ]?\d{3}[\.\- ]?\d{4}$/
     },

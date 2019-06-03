@@ -1,5 +1,5 @@
 module.exports = {
-    Admin: require("./moderatorModel"),
+    Moderator: require("./moderatorModel"),
     Plant: require("./plantModel"),
     Library: require("./libraryModel")
   };

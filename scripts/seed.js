@@ -35,12 +35,33 @@ const plantSeed = [
   }
 ];
 
+const moderatorSeed = [
+  {
+   route_name: "Limbach17",
+   first_name: "Matthew",
+   last_name: "Limbach",
+   email: "truffle.app@gmail.com",
+   phone: "(412) 389-0641",
+   admin_since: Date()
+  }
+];
+
 db.Plant
-  .remove({})
+  .deleteMany({})
   .then(() => db.Plant.collection.insertMany(plantSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
-    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+  db.Moderator
+  .deleteMany({})
+  .then(() => db.Moderator.collection.insertMany(moderatorSeed))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
   })
   .catch(err => {
     console.error(err);
