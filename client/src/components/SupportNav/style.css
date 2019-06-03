@@ -25,6 +25,7 @@
     
     a:hover {
         color: #E45024;
+        cursor: auto;
     }
 
     a:active {
@@ -33,5 +34,6 @@
 
     a:visited {
         text-decoration: none;
+        cursor: auto;
     }
 }

@@ -9,29 +9,9 @@
         color: #707070;
         height: 150px;
         width: 270px;
-    }
-
-    /* img {
-        position: absolute;
-        float: top;
-        height: 145px;
-        width: 196.83px;
-        z-index: -1;
-        opacity: 0.33;
-    } */
-
-    /* #text-box::before{
-        background-image: url("https://truffle-shuffle.s3.us-east-2.amazonaws.com/Assets/img/beech_leaf.png");
+        background-image: url("https://truffle-shuffle.s3.us-east-2.amazonaws.com/Assets/img/beech_leaf_0.33.png");
         background-size: cover;
-        content: "";
-        display: block;
-        width: 270px;
-        height: 150px;
-        z-index: -1;
-        opacity: 0.33;
-    } */
-
-
+    }
 
     h1 {
         opacity: 1;
@@ -52,6 +32,11 @@
     a {
         color: #707070;
         text-decoration: none;
+        cursor: auto;
+    }
+
+    a:hover {
+        color: #E45024;
         cursor: auto;
     }
 }

@@ -5,19 +5,21 @@ import List from "./pages/List";
 import NoMatch from "./pages/NoMatch";
 import WIP from "./pages/WIP";
 import Nav from "./components/Nav";
+import PageDisplay from "./components/PageDisplay";
 
 function App() {
   return (
     <Router>
       <div>
         <Nav />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/list" component={List} />
-            <Route exact path="/not-found" component={WIP} />
-            <Route exact path="*" component={NoMatch} />
-          </Switch>
+          <PageDisplay>
+            <Switch>
+              <Route exact path="/home" component={Home} />
+              <Route exact path="/list" component={List} />
+              <Route exact path="/not-found" component={WIP} />
+              <Route exact path="*" component={NoMatch} />
+            </Switch>
+          </PageDisplay>
       </div>
     </Router>
   );
