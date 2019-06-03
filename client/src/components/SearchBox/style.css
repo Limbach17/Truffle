@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
 @media (min-width: 1024px) {
-    #search-row {
-        height: 40px;
+    #basic-form {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
+        
     }
 }

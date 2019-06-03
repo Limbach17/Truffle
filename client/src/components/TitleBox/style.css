@@ -42,9 +42,16 @@
     }
 
     h2 {
+        color: #707070;
         font-size: 24px;
         font-weight: 500;
         padding: 0 auto;
         margin: 0 auto;
+    }
+
+    a {
+        color: #707070;
+        text-decoration: none;
+        cursor: auto;
     }
 }

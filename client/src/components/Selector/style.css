@@ -4,14 +4,8 @@
     #selector {
         display: flex;
         flex-direction: column;
-        align-items: baseline;
-        justify-content: right;
-        width: 550px;
+        justify-content: flex-end;
+        width: 560px;
         height: 150px;
-    }
-
-    hr {
-        width: 550px;
-        height: 2px;
     }
 }

@@ -7,7 +7,6 @@ function Selector () {
     return (
         <div id="selector">
             <Search />
-            <hr />
             <List />
         </div>
     );
