@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+@media (min-width: 1024px) {
+    #header {
+        width: 85%;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+    }
+}
