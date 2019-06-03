@@ -5,16 +5,12 @@ import List from "./pages/List";
 import NoMatch from "./pages/NoMatch";
 import WIP from "./pages/WIP";
 import Nav from "./components/Nav";
-import Header from "./components/Header";
-import Container from "./components/Container";
 
 function App() {
   return (
     <Router>
       <div>
         <Nav />
-        <Header />
-        <Container>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
@@ -22,8 +18,6 @@ function App() {
             <Route exact path="/not-found" component={WIP} />
             <Route exact path="*" component={NoMatch} />
           </Switch>
-        </Container>
-        
       </div>
     </Router>
   );

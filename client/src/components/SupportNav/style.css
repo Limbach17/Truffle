@@ -32,6 +32,6 @@
     }
 
     a:visited {
-        color: blue;
+        text-decoration: none;
     }
 }

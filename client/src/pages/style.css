@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+@media (min-width: 1024px) {
+    .page-display {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
