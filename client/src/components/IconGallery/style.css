@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+@media (min-width: 1024px) {
+
+    #icon-array {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    img {
+        height: 30px;
+        width: 30px;
+        margin: 0px 5px 0px 5px;
+    }
+
+    a:hover {
+        color: #E45024;
+    }
+}

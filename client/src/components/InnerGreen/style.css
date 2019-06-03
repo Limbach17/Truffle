@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+@media (min-width: 1024px) {
+
+    #inner-green {
+        width: 85%;
+        height: 150px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        
+    }
+}
