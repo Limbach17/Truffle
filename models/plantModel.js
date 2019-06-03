@@ -5,9 +5,9 @@ var Schema = mongoose.Schema;
 var plantSchema = new Schema({
 
     route_name: {
-        type: String,
+        type: RegExp,
         requied: true,
-        unique: true
+        $regex: /^[a-z]+(_[a-z]+)*$/
     },
 
     common_names: {
@@ -33,7 +33,7 @@ var plantSchema = new Schema({
         $regex: /^[^A-Z][a-z]+$/
     },
 
-    tropicos_id: {
+    tropicos_name_id: {
         type: int,
         required: true
     },

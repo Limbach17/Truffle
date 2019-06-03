@@ -15,9 +15,8 @@ db.Library.create({ name: "Truffle protolibrary" })
   });
 
 app.post("/submit", function(req, res) {
-
   db.Plant.create(req.body)
-    .then(function(dbBook) {
+    .then(function(dbPlant) {
       
       return db.Library.findOneAndUpdate({}, { $push: { plants: dbPlant._id } }, { new: true });
     })
