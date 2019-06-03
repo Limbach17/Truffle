@@ -6,5 +6,10 @@
         height: 150px;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+    }
+
+    hr {
+        width: 85%;
     }
 }
