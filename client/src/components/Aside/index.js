@@ -1,12 +1,12 @@
 import React from "react";
 import "./style.css";
 
-function PageDisplay () {
+function Aside () {
     return (
-        <div id="page-display">
+        <div id="aside">
 
         </div>
     );
 }
 
-export default PageDisplay;
+export default Aside;

@@ -10,7 +10,8 @@
         height: 150px;
         width: 270px;
         background-image: url("https://truffle-shuffle.s3.us-east-2.amazonaws.com/Assets/img/beech_leaf_0.33.png");
-        background-size: cover;
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 
     h1 {

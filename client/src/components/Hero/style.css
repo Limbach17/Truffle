@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+@media (min-width: 1024px) {
+    #hero {
+        background-image: url("https://truffle-shuffle.s3.us-east-2.amazonaws.com/Assets/img/Texas_mountain_laurel_3_800x600_crop_center.jpg");
+        background-position: center;
+        background-size: contain;
+
+    }
+
+    #hero-text {
+        text-align: left;
+        position: absolute;
+        float: bottom;
+        color: #E45024;
+    }
+}

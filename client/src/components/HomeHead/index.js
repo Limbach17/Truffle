@@ -1,14 +1,12 @@
 import React from "react";
-import HeadTop from "../HeadTop";
-import HeadBottom from "../HeadBottom";
 import "./style.css";
 
 function Header () {
     return (
         <div id="header">
-            <HeadTop />
+            <h3>Art, Multimedia, and Scientific Drawings</h3>
+            <p>From our image library</p>
             <hr />
-            <HeadBottom />
         </div>
     );
 }
