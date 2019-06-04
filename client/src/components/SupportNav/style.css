@@ -19,10 +19,15 @@
         flex-direction: row;
     }
 
-    p {
+    #grey {
+        color: #707070;
         margin: 0px 5px 0px 5px;
     }
     
+    #support-link {
+        font-size: 14pt;
+        font-weight: 300;
+    }
     a:hover {
         color: #E45024;
         cursor: auto;

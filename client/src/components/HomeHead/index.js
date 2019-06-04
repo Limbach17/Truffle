@@ -3,7 +3,7 @@ import "./style.css";
 
 function Header () {
     return (
-        <div id="header">
+        <div className="header">
             <h3>Art, Multimedia, and Scientific Drawings</h3>
             <p>From our image library</p>
             <hr />

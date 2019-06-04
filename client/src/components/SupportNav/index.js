@@ -6,22 +6,22 @@ function SupportNav () {
 
         <ul id="links">
             <li>
-                <a href="/not-found" target="blank">Advanced Search</a>
-                <p>|</p>
+                <a id="support-link" href="/not-found" target="blank">Advanced Search</a>
+                <p id="grey">|</p>
             </li>
 
             <li>
-                <a href="/not-found" target="blank">Support</a>
-                <p>|</p>
+                <a id="support-link" href="/not-found" target="blank">Support</a>
+                <p id="grey">|</p>
             </li>
 
             <li>
-                <a href="/not-found" target="blank"> About</a>
-                <p>|</p>
+                <a id="support-link" href="/not-found" target="blank"> About</a>
+                <p id="grey">|</p>
             </li>
 
             <li>
-                <a href="/not-found" target="blank">Login</a>
+                <a id="support-link" href="/not-found" target="blank">Login</a>
             </li>
         </ul>
 

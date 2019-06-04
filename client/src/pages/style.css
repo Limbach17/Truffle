@@ -9,4 +9,11 @@
         flex-direction: column;
         justify-content: center;
     }
+
+    #list-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        
+    }
 }

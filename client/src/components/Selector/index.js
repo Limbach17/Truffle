@@ -1,13 +1,13 @@
 import React from "react";
 import Search from "../Search";
-import List from "../List";
+import Index from "../Index";
 import "./style.css";
 
 function Selector () {
     return (
         <div id="selector">
             <Search />
-            <List />
+            <Index />
         </div>
     );
 }
