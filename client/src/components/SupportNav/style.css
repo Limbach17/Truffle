@@ -2,43 +2,11 @@
 
 @media (min-width: 1024px) {
 
-    #links {
+    #support-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-content: center;
         list-style: none;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        display: flex;
-        flex-direction: row;
-        justify-content: right;
-        align-content: space-between;
-        align-items: center;
-    }
-
-    li {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-    }
-
-    #grey {
-        color: #707070;
-        margin: 0px 5px 0px 5px;
-    }
-    
-    #support-link {
-        font-size: 14pt;
-        font-weight: 300;
-    }
-    a:hover {
-        color: #E45024;
-        cursor: auto;
-    }
-
-    a:active {
-        color: #E45024;
-    }
-
-    a:visited {
-        text-decoration: none;
-        cursor: auto;
     }
 }

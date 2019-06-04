@@ -1,13 +1,12 @@
 import React from "react";
-import Whitehead from "../Whitehead";
-import Greenhead from "../Greenhead";
-// import "./style.css";
+import WhiteHead from "../WhiteHead";
+// import Greenhead from "../Greenhead";
 
 function Nav() {
   return (
     <div>
-        <Whitehead />
-        <Greenhead />
+        <WhiteHead />
+        {/* <Greenhead /> */}
     </div>
   );
 }

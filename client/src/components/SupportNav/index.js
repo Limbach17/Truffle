@@ -1,26 +1,26 @@
 import React from "react";
+// import Link from "react";
 import "./style.css";
 
 function SupportNav () {
     return (
-
-        <ul id="links">
-            <li>
+        <ul id="support-links">
+            <li className="support-list">
                 <a id="support-link" href="/not-found" target="blank">Advanced Search</a>
-                <p id="grey">|</p>
+                <p className="link-space">|</p>
             </li>
 
-            <li>
+            <li className="support-list">
                 <a id="support-link" href="/not-found" target="blank">Support</a>
-                <p id="grey">|</p>
+                <p className="link-space">|</p>
             </li>
 
-            <li>
+            <li className="support-list">
                 <a id="support-link" href="/not-found" target="blank"> About</a>
-                <p id="grey">|</p>
+                <p className="link-space">|</p>
             </li>
 
-            <li>
+            <li className="support-list">
                 <a id="support-link" href="/not-found" target="blank">Login</a>
             </li>
         </ul>
@@ -29,3 +29,8 @@ function SupportNav () {
 }
 
 export default SupportNav;
+
+
+
+
+            // <Link to={'/503'}>Advanced Search</Link>

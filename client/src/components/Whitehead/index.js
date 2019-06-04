@@ -1,13 +1,15 @@
 import React from "react";
-import InnerWhite from "../InnerWhite";
+import IconGallery from "../IconGallery";
+import SupportNav from "../SupportNav";
 import "./style.css";
 
-function Whitehead () {
-    return (
-        <div id="white-header">
-            <InnerWhite id="inner-white"/>
-        </div>
-    );
+function WhiteHead() {
+  return (
+    <div id="inner-white-bar">
+        <IconGallery />
+        <SupportNav />
+    </div>
+  );
 }
 
-export default Whitehead;
+export default WhiteHead;

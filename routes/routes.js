@@ -53,6 +53,19 @@ app.get("/plants", function(req, res) {
     });
 });
 
+app.get("/genus/:letter", function(req, res) {
+  const letter = req.params.letter.toUpperCase();
+  var letterString = new RegExp("^" + letter);
+  console.log(letterString);
+  db.Plant.find({genus: letterString}).sort({scientific_name :1})
+    .then(function(dbPlant) {
+      res.json(dbPlant);
+    })
+    .catch(function(err) {
+      res.json(err);
+    });
+});
+
 app.post("/submit", function(req, res) {
   db.Plant.create(req.body)
     .then(function(dbPlant) {

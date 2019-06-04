@@ -1,13 +1,13 @@
-@charset "UTF-8";
-
 @media (min-width: 1024px) {
-    #white-header {
-        width: 100%;
+
+    #inner-white-bar {
+        width: 85%;
+        margin-left: 7.5%;
         height: 40px;
         background-color: white;
         display: flex;
         flex-direction: row;
-        justify-content: center;
         align-items: center;
+        justify-content: space-between;
     }
 }

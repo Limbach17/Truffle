@@ -1,8 +1,0 @@
-@charset "UTF-8";
-
-@media (min-width: 1024px) {
-    #aside {
-        display: flex;
-        flex-direction: column;
-    }
-}
