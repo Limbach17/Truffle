@@ -2,8 +2,9 @@
 
 @media (min-width: 1024px) {
     #hero {
+        width: 50%;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
     }

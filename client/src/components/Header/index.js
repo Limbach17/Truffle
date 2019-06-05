@@ -5,7 +5,7 @@ import "./style.css";
 function Header (props) {
     return (
         <div id="header">
-            <h4>Browsing -<span>{props.selection}</span></h4>
+            <h3>{props.header}<span className="selection">{props.selection}</span></h3>
 
         </div>
     );

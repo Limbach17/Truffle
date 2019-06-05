@@ -3,9 +3,12 @@
 @media (min-width: 1024px) {
     #container {
         width: 85%;
+        margin-left: 7.5%;
+        height: 100%;
+        overflow: scroll;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: flex-start;
     }
 }

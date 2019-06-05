@@ -2,7 +2,8 @@
 
 @media (min-width: 1024px) {
     #header {
-        width: 100%;
+        width: 85%;
+        margin-left: 7.5%;
         height: 50px;
         display: flex;
         flex-direction: column;

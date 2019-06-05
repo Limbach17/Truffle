@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+@media (min-width: 1024px) {
+    #aside {
+        width: 30%;
+        overflow: scroll;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}

@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+@media (min-width: 1024px) {
+    #selector {
+        padding-right: 7.5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: space-around;
+        margin-bottom: 5px; 
+    }
+}

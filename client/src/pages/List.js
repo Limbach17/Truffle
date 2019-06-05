@@ -2,24 +2,33 @@ import React, { Component } from "react";
 import Nav from "../components/Nav";
 import Title from "../components/Title";
 import Header from "../components/Header";
-import Flatlist from "../components/Flatlist";
+import Container from "../components/Container";
 import API from "../utils/API";
 import "../map.css";
 
 class List extends Component {
 
     state = {
+        page: this.Component,
         plants: [],
-        title: "Results",
-        selection: this.props.match.params.letter
+        title: "Scientific Names by Genus",
+        subtitle: "Results",
+        header: "Browsing - ",
+        selection: ""
       };
     
       componentDidMount() {
         this.loadPlants();
       }
 
+      setSelection = (event) => {
+          console.log(event.target.getAttribute("value"));
+          const letter = event.target.getAttribute("value");
+          console.log(letter);
+          this.setState({selection: letter});
+      }
+
       loadPlants = () => {
-        console.log("Hi");
         API.getGenus(this.state.selection)
           .then(res => {
             console.log(res);
@@ -32,16 +41,22 @@ class List extends Component {
     render () {
         return (
             <div>
-                <Nav />
+                <Nav setSelection={this.setSelection}/>
                 <Title 
                     title={this.state.title}
+                    subtitle={this.state.subtitle}
                     />
+                <hr />
                 <Header 
+                  header={this.state.header}
                   selection={this.state.selection}
                   />
-                <Flatlist 
+
+                <Container 
                   plants={this.state.plants}
-                  href={"/profile/" + this.state.plants.id}/>
+                  page={this.state.page}
+                  />
+                
             </div>
         );
     }

@@ -2,8 +2,9 @@
 
 @media (min-width: 1024px) {
     #title {
-        width: 100%;
-        padding-left: 7.5%;
+        width: 85%;
+        margin-top: 50px;
+        margin-left: 7.5%;
         height: 50px;
         display: flex;
         flex-direction: column;

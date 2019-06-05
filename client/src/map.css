@@ -10,15 +10,29 @@ body {
 @media (min-width: 1024px) {
 
     h1 {
-        font-size: 84px;
+        font-size: 94px;
         font-weight: 700;
+        padding: 0;
+        margin: 0;
+    }
+
+    h2 {
+        font-size: 24px;
+        font-weight: 500;
         padding: 0;
         margin: 0;
     }
     
     h3 {
-        font-size: 24px;
-        font-weight: 500;
+        font-size: 20px;
+        font-weight: 400;
+        padding: 0;
+        margin: 0;
+    }
+
+    h4 {
+        font-size: 16px;
+        font-weight: 300;
         padding: 0;
         margin: 0;
     }
@@ -26,8 +40,6 @@ body {
     hr {
         color: #707070;
         width: 85%;
-        padding: inherit;
-        margin: inherit;
     }
     
     .header-link {
@@ -98,6 +110,10 @@ body {
         font-weight: 300;
     }
 
+    .selection {
+        color: #E45024;
+        font-weight: 300;
+    }
     .support-list {
         display: flex;
         flex-direction: row;
