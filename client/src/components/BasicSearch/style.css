@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+@media (min-width: 1024px) {
+
+    textarea {
+        width: 100px;
+        height: 10px;
+    }
+    #search-button {
+        width: 10px;
+        height: 10px;
+    }
+
+}

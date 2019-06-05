@@ -4,13 +4,11 @@
 
     #green-head {
         width: 100%;
-        padding-left: 7.5%;
-        padding-right: 7.5%;
         height: 150px;
-        background-color: #88B85F;
+        background-color: #88B85f;
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: space-around;
     }
 }
 

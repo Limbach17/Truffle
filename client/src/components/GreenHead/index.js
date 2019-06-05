@@ -4,7 +4,7 @@ import Selector from "../Selector";
 import "../../map.css";
 import "./style.css";
 
-function GreenHead () {
+function GreenHead() {
     return (
         <div id="green-head">
             <TitleBox />
