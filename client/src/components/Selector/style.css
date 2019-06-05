@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+@media (min-width: 1024px) {
+    #selector {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: baseline;
+        height: 150px;
+    }
+}

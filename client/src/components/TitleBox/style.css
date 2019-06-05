@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+@media (min-width: 1024px) {
+
+    #text-box {
+        width: 270px;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        background-image: url("https://truffle-shuffle.s3.us-east-2.amazonaws.com/Assets/img/beech_leaf_0.33.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+}
