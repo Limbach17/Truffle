@@ -4,6 +4,8 @@
 
     #green-head {
         width: 100%;
+        /* padding-left: 7.5%;
+        padding-right: 7.5%; */
         height: 150px;
         background-color: #88B85f;
         display: flex;

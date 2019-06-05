@@ -3,6 +3,8 @@ var db = require("../models/");
 const express = require("express");
 var app = express();
 
+//////// CREATE A NEW LIBRARY //////////
+
 db.Library.create({ name: "truffle-proto-library" })
   .then(function(dbLibrary) {
     console.log(dbLibrary);
@@ -10,6 +12,8 @@ db.Library.create({ name: "truffle-proto-library" })
   .catch(function(err) {
     console.log(err.message);
   });
+
+//////// RETRIEVE A SPECIFIC LIBRARY //////////
 
 app.get("/libraries", function(req, res) {
   db.Library.find({}).sort({name: 1})
@@ -20,6 +24,8 @@ app.get("/libraries", function(req, res) {
       res.json(err);
     });
 });
+
+//////// RETRIEVE A ONLY POPULATED LIBRARIES //////////
 
 app.get("/populated-libraries", function(req, res) {
   db.Library.find().sort({name: 1})
@@ -32,6 +38,8 @@ app.get("/populated-libraries", function(req, res) {
     });
 });
 
+//////// RETRIEVE THE TRUFFLE PROTOTYPE LIBRARY //////////
+
 app.get("/truffle-proto-library", function(req, res) {
   db.Library.find({name: "truffle-proto-library"})
     .populate("plants")
@@ -43,6 +51,8 @@ app.get("/truffle-proto-library", function(req, res) {
     });
 });
 
+//////// RETRIEVE ALL PLANTS FROM THE DATABASE //////////
+
 app.get("/plants", function(req, res) {
   db.Plant.find({})
     .then(function(dbPlant) {
@@ -53,8 +63,12 @@ app.get("/plants", function(req, res) {
     });
 });
 
-app.get("/plant/id", function(req, res) {
-  db.Plant.find({})
+//////// RETRIEVE A SPECIFIC PLANT BY ID //////////
+
+
+app.get("/plant/:id", function(req, res) {
+  const plantId = req.params.id;
+  db.Plant.find({id: plantId})
     .then(function(dbPlant) {
       res.json(dbPlant);
     })
@@ -62,6 +76,8 @@ app.get("/plant/id", function(req, res) {
       res.json(err);
     });
 });
+
+//////// RETRIEVE ALL GENIUSES STARTING WITH A SPECIFIC LETTER //////////
 
 app.get("/genus/:letter", function(req, res) {
   const letter = req.params.letter.toUpperCase();
@@ -75,6 +91,8 @@ app.get("/genus/:letter", function(req, res) {
       res.json(err);
     });
 });
+
+//////// CREATE A NEW PLANT ENTRY //////////
 
 app.post("/submit", function(req, res) {
   db.Plant.create(req.body)

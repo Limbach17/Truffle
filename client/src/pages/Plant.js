@@ -2,16 +2,14 @@ import React, { Component } from "react";
 import Nav from "../components/Nav";
 import Title from "../components/Title";
 import Header from "../components/Header";
-import Flatlist from "../components/Flatlist";
 import API from "../utils/API";
 import "../map.css";
 
-class List extends Component {
-
+class Plant extends Component {
     state = {
         plants: [],
-        title: "Results",
-        selection: this.props.match.params.letter
+        title: "Plant profile",
+        name: ""
       };
     
       componentDidMount() {
@@ -19,8 +17,7 @@ class List extends Component {
       }
 
       loadPlants = () => {
-        console.log("Hi");
-        API.getGenus(this.state.selection)
+        API.getOne(this.state.selection)
           .then(res => {
             console.log(res);
             this.setState({ plants: res.data});
@@ -36,15 +33,10 @@ class List extends Component {
                 <Title 
                     title={this.state.title}
                     />
-                <Header 
-                  selection={this.state.selection}
-                  />
-                <Flatlist 
-                  plants={this.state.plants}
-                  href={"/profile/" + this.state.plants.id}/>
+                <Header />
             </div>
         );
     }
 }
 
-export default List;
+export default Plant;
