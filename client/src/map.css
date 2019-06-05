@@ -26,6 +26,8 @@ body {
     hr {
         color: #707070;
         width: 85%;
+        padding: inherit;
+        margin: inherit;
     }
     
     .header-link {

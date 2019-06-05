@@ -2,11 +2,10 @@ import React from "react";
 import "../../map.css";
 import "./style.css";
 
-function Header () {
+function Header (props) {
     return (
         <div id="header">
-
-            <hr />
+            <h4>Browsing - <span>{props.selection}</span></h4>
 
         </div>
     );

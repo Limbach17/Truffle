@@ -1,8 +1,9 @@
 @charset "UTF-8";
 
 @media (min-width: 1024px) {
-    #header {
+    #title {
         width: 100%;
+        padding-left: 7.5%;
         height: 50px;
         display: flex;
         flex-direction: column;

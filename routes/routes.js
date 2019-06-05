@@ -53,6 +53,16 @@ app.get("/plants", function(req, res) {
     });
 });
 
+app.get("/plant/id", function(req, res) {
+  db.Plant.find({})
+    .then(function(dbPlant) {
+      res.json(dbPlant);
+    })
+    .catch(function(err) {
+      res.json(err);
+    });
+});
+
 app.get("/genus/:letter", function(req, res) {
   const letter = req.params.letter.toUpperCase();
   var letterString = new RegExp("^" + letter);

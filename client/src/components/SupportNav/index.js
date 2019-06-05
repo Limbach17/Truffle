@@ -21,7 +21,7 @@ function SupportNav () {
             </li>
 
             <li className="support-list">
-                <a id="support-link" href="/503" target="blank">Login</a>
+                <a id="support-link" href="/moderator" target="blank">Login</a>
             </li>
         </ul>
 

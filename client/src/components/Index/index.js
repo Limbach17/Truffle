@@ -6,32 +6,32 @@ import "./style.css";
 function Index () {
     return (
         <div id="selectors">
-            <a className="index-link" href="/list">A</a>
-            <a className="index-link" href="/list">B</a>
-            <a className="index-link" href="/list">C</a>
-            <a className="index-link" href="/list">D</a>
-            <a className="index-link" href="/list">E</a>
-            <a className="index-link" href="/list">F</a>
-            <a className="index-link" href="/list">G</a>
-            <a className="index-link" href="/list">H</a>
-            <a className="index-link" href="/list">I</a>
-            <a className="index-link" href="/list">J</a>
-            <a className="index-link" href="/list">K</a>
-            <a className="index-link" href="/list">L</a>
-            <a className="index-link" href="/list">M</a>
-            <a className="index-link" href="/list">N</a>
-            <a className="index-link" href="/list">O</a>
-            <a className="index-link" href="/list">P</a>
-            <a className="index-link" href="/list">Q</a>
-            <a className="index-link" href="/list">R</a>
-            <a className="index-link" href="/list">S</a>
-            <a className="index-link" href="/list">T</a>
-            <a className="index-link" href="/list">U</a>
-            <a className="index-link" href="/list">V</a>
-            <a className="index-link" href="/list">W</a>
-            <a className="index-link" href="/list">X</a>
-            <a className="index-link" href="/list">Y</a>
-            <a className="index-link" href="/list">Z</a>
+            <a className="index-link" href="/list/a">A</a>
+            <a className="index-link" href="/list/b">B</a>
+            <a className="index-link" href="/list/c">C</a>
+            <a className="index-link" href="/list/d">D</a>
+            <a className="index-link" href="/list/e">E</a>
+            <a className="index-link" href="/list/f">F</a>
+            <a className="index-link" href="/list/g">G</a>
+            <a className="index-link" href="/list/h">H</a>
+            <a className="index-link" href="/list/i">I</a>
+            <a className="index-link" href="/list/j">J</a>
+            <a className="index-link" href="/list/k">K</a>
+            <a className="index-link" href="/list/l">L</a>
+            <a className="index-link" href="/list/m">M</a>
+            <a className="index-link" href="/list/n">N</a>
+            <a className="index-link" href="/list/o">O</a>
+            <a className="index-link" href="/list/p">P</a>
+            <a className="index-link" href="/list/q">Q</a>
+            <a className="index-link" href="/list/r">R</a>
+            <a className="index-link" href="/list/s">S</a>
+            <a className="index-link" href="/list/t">T</a>
+            <a className="index-link" href="/list/u">U</a>
+            <a className="index-link" href="/list/v">V</a>
+            <a className="index-link" href="/list/w">W</a>
+            <a className="index-link" href="/list/x">X</a>
+            <a className="index-link" href="/list/y">Y</a>
+            <a className="index-link" href="/list/z">Z</a>
         </div>
     );
 }
@@ -39,8 +39,8 @@ function Index () {
 export default Index;
 
 {/* <div id="buttons">
-            <a className="index-link" href="/list">A</a>
+            <a className="index-link" href="/list/d">A</a>
         </div> */}
 
 
-        // <Link to={"/list/{a}"}>A</Link>
+        // <Link to={"/list/d/{a}"}>A</Link>
