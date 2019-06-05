@@ -13,10 +13,10 @@ const Hero = (props) => {
                   case "List":
                      return <div id="hero"> <Flatlist plants={plants} /> </div>;
                   default:
-                     return <div></div>;
+                     return <div id="test"></div>;
                } 
+            
             }
-
 };
       
 export default Hero;

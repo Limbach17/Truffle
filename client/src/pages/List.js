@@ -9,7 +9,7 @@ import "../map.css";
 class List extends Component {
 
     state = {
-        page: this.Component,
+        page: "List",
         plants: [],
         title: "Scientific Names by Genus",
         subtitle: "Results",
@@ -18,10 +18,13 @@ class List extends Component {
       };
     
       componentDidMount() {
+        this.setSelection = this.setSelection.bind(this);
         this.loadPlants();
       }
 
       setSelection = (event) => {
+          event.preventDefault();
+          console.log("Hi");
           console.log(event.target.getAttribute("value"));
           const letter = event.target.getAttribute("value");
           console.log(letter);
@@ -29,6 +32,7 @@ class List extends Component {
       }
 
       loadPlants = () => {
+        let letter = this.state.selection;
         API.getGenus(this.state.selection)
           .then(res => {
             console.log(res);

@@ -10,7 +10,6 @@ export default {
     return axios.get("/plant/" + id);
   },
   
-  
   getGenus: function(letter) {
     return axios.get("/genus/" + letter);
   }

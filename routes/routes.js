@@ -80,7 +80,7 @@ app.get("/plant/:id", function(req, res) {
 //////// RETRIEVE ALL GENIUSES STARTING WITH A SPECIFIC LETTER //////////
 
 app.get("/genus/:letter", function(req, res) {
-  const letter = req.params.letter.toUpperCase();
+  const letter = req.params.letter;
   var letterString = new RegExp("^" + letter);
   console.log(letterString);
   db.Plant.find({genus: letterString}).sort({scientific_name :1})
