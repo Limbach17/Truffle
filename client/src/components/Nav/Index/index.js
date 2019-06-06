@@ -8,10 +8,11 @@ function Index (props) {
     let linkRay = [];
 
     for (var i = 0; i < 26; i++) {
-        linkRay.push(<a className="index-link" key={i} value={String.fromCharCode(i + 65)} 
-            href={"/list/genus/" + String.fromCharCode(i + 97)}
+            linkRay.push(<a className="index-link" key={i} value={String.fromCharCode(i + 65)} 
+            href={"/list/genus/" + String.fromCharCode(i + 65)}
             onClick={props.setSelection}>{String.fromCharCode(i + 65)}</a>);
     }
+
     return (
         <div id="selectors">
             {linkRay}

@@ -14,29 +14,69 @@ class List extends Component {
         title: "Scientific Names by Genus",
         subtitle: "Results",
         header: "Browsing - ",
-        selection: "A"
+        selection: this.props.match.params.selection
+        
       };
 
       componentDidMount() {
-        // const { letter} = this.props.match.params
-    
-        // fetch(`localhost:3000/list/genus/${letter}`)
-        //   .then((selection) => {
-        //     this.setState(() => ({ selection }))
-        //   });
         this.loadPlants();
       }
 
-      setSelection = (event) => {
-        event.preventDefault()
-        const letter=event.target.getAttribute("value");
-        console.log(letter);
-        this.setState({selection: letter});
-    }
+      // componentDidMount () {
+      //   const { selection } = this.props.match.params;
+    
+      //   API.getGenus(selection.toUpperCase())
+      //   .then(res => {
+      //     console.log(res);
+      //     this.setState({ plants: res.data,
+      //                     selection: selection
+      //                   });
+      //     }
+      //   )
+      //   .catch(err => console.log(err));
+      // }
+
+      // UNSAFE_componentWillReceiveProps () {
+      // const thisGuy =  this.awaitstate();
+      // console.log(thisGuy);
+
+      //   API.getGenus(thisGuy.toUpperCase())
+      //   .then(res => {
+      //     console.log(res);
+      //     this.setState({ plants: res.data,
+      //       });
+      //   }
+      //   )
+      //   .catch(err => console.log(err));
+      // }
+      // awaitstate = async()=>{
+      //   const selection = await this.props.match.params.selection;
+      //   this.setState({selection: selection});
+      //   return selection;
+      // }
+      // componentDidMount() {
+      //   this.setLetter();
+      //   // this.loadPlants();
+        
+      // }
+
+      // componentDidUpdate() {
+      //   // this.setLetter();
+      //   // this.loadPlants();
+      // }
+
+      // setLetter = () => {
+      //   // const selection = this.props.match.params.selection;
+      //   this.setState((state) => {
+      //     return {selection: this.props.match.params.selection}
+      //   })
+      //   // console.log(JSON.stringify(selection));
+      // }
 
       loadPlants = () => {
-        let letter = this.state.selection;
-        API.getGenus(letter)
+        const {selection} = this.state;
+        
+        API.getGenus(selection)
           .then(res => {
             console.log(res);
             this.setState({ plants: res.data});

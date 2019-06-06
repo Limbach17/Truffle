@@ -41,13 +41,13 @@ class SubForm extends Component {
         })
         .catch(err => console.log(err));
       
-    // this.setState({
-    //   route_name: "",
-    //   genus: "",
-    //   species: "",
-    //   common_names: [],
-    //   tropicos_id: null  
-    // });
+    this.setState({
+      route_name: "",
+      genus: "",
+      species: "",
+      common_names: [],
+      tropicos_id: null  
+    });
   };
 
   render() {
