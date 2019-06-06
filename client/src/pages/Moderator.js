@@ -35,7 +35,7 @@ class Moderator extends Component {
                 <Title 
                  title={this.state.title}
                  />
-                <Header />
+                 <hr />
                 <Container 
                   page={this.state.page}/>
             </div>
