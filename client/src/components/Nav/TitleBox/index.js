@@ -6,7 +6,7 @@ function TitleBox () {
     return (
             <div id="text-box">
                 <h2>Botanical image library</h2>
-                <a className="header-link" href="/" alt="home"><h1>Truffle</h1></a>
+                <a className="header-link" href="/home" alt="home"><h1>Truffle</h1></a>
             </div>
     );
 }

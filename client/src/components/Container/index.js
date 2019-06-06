@@ -4,17 +4,85 @@ import Aside from "../Aside";
 import "../../map.css";
 import "./style.css";
 
-const Container = (props) => (
-   
-        <div id="container">
-            <Hero
-              plants={props.plants}
-              page={props.page}
-            />
-            <Aside />
+const Container = (props) => {
+  const {page} = props;
+  const {plants} = props;
+       {
+          switch(page){
+              case "home":
+                 return (
+                        <div id="container">
+                          <Hero 
+                            page={page}
+                            />
+                          <Aside />
 
-        </div>
-      )
-      
+                        </div>
+                    );
+              case "list":
+                  return (
+                        <div id="container">
+                            <Hero 
+                              page = {page}
+                              plants = {plants}
+                              />
+                            <Aside />
+
+                          </div>
+                  );
+              case "profile":
+                return (
+                      <div id="container">
+                          <Hero 
+                            page={page}
+                            />
+                          <Aside />
+
+                        </div>
+                 );
+              case "503":
+                return (
+                    <div id="container">
+                        <div>
+                          <h2>Work in progress</h2>
+                          <h2>This page is currently under construction. Please check back later...</h2>
+                        </div>
+                      </div>
+                  );
+              default:
+                  return (
+                     <div id="container">
+                            <div>
+                              <h2>404 Page Not Found</h2>
+                              <h2>
+                              <span role="img" aria-label="Face With Rolling Eyes Emoji">
+                                      🙄
+                              </span>
+                              </h2>
+                            </div>
+                          </div>
+                  );
+              } 
+           
+           }
+};
+     
 export default Container;
+
+// const Container = (props) => (
+   
+//         <div id="container">
+            
+            
+            
+            
+//             <Hero
+//               page={props.page}
+//             />
+//             <Aside />
+
+//         </div>
+//       )
+      
+// export default Container;
   

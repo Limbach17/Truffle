@@ -9,27 +9,34 @@ import "../map.css";
 class List extends Component {
 
     state = {
-        page: "List",
+        page: "list",
         plants: [],
         title: "Scientific Names by Genus",
         subtitle: "Results",
         header: "Browsing - ",
-        selection: ""
+        selection: "A"
       };
-    
+
       componentDidMount() {
-        this.setSelection = this.setSelection.bind(this);
+        this.setState({selection: "A"});
         this.loadPlants();
       }
 
       setSelection = (event) => {
-          event.preventDefault();
-          console.log("Hi");
-          console.log(event.target.getAttribute("value"));
-          const letter = event.target.getAttribute("value");
-          console.log(letter);
-          this.setState({selection: letter});
-      }
+        event.preventDefault()
+        const letter=event.target.getAttribute("value");
+        console.log(letter);
+        this.setState({selection: letter});
+    }
+
+      // setSelection = (event) => {
+      //     event.preventDefault();
+      //     console.log("Hi");
+      //     console.log(event.target.getAttribute("value"));
+      //     const letter = event.target.getAttribute("value");
+      //     console.log(letter);
+      //     this.setState({selection: letter});
+      // }
 
       loadPlants = () => {
         let letter = this.state.selection;

@@ -1,13 +1,20 @@
 import React, { Component } from "react";
 import Nav from "../components/Nav";
+import Container from "../components/Container";
 
 class Err503 extends Component {
+
+    state = {
+        page: "503"
+      };
+
     render () {
         return (
             <div>
                 <Nav />
-                <h1>Work in progress</h1>
-                <p>This page is currently under construction. Please check back later...</p>
+                <Container 
+                    page={this.state.page}
+                />
             </div>
         );
     }

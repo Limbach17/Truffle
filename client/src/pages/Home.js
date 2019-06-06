@@ -7,7 +7,7 @@ import API from "../utils/API";
 class Home extends Component {
 
     state = {
-        page: this.Component,
+        page: "home",
         plants: [],
         title: "Art, Multimedia, and Scientific Drawings",
         subtitle: "From our image library"

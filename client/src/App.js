@@ -12,9 +12,9 @@ function App() {
     <Router>
       <div>
           <Switch>
-            <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
-            <Route exact path="/list/:letter" component={List} />
+            <Route exact path="/list/genus/:letter" component={List} />
             <Route exact path="/profile/:id" component={Plant} />
             <Route exact path="/moderator" component={Moderator} />
             <Route exact path="/503" component={Err503} />

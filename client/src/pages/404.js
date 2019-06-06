@@ -1,18 +1,20 @@
 import React, { Component } from "react";
 import Nav from "../components/Nav";
+import Container from "../components/Container";
 
 class Err404 extends Component {
+    state = {
+        page: "404"
+    }
     render () {
         return (
             <div>
                 <Nav />
-                <h1>404 Page Not Found</h1>
-                <h1>
-                <span role="img" aria-label="Face With Rolling Eyes Emoji">
-                        🙄
-                </span>
-                </h1>
+                <Container 
+                    page={this.state.page}
+                />
             </div>
+            
         );
     }
 }
