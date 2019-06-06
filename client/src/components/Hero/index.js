@@ -32,12 +32,13 @@ const Hero = (props) => {
       
               </div>
                 );
-            case "profile":
+            case "moderator":
               return (
-                     <div id="hero">
+                     <div id="form">
                      </div>
                );
-               } 
+
+            } 
             
          }
 };

@@ -33,11 +33,15 @@ const Container = (props) => {
               case "profile":
                 return (
                       <div id="container">
+                          
+                      </div>
+                 );
+              case "moderator":
+                return (
+                      <div id="container">
                           <Hero 
                             page={page}
                             />
-                          <Aside />
-
                         </div>
                  );
               case "503":
@@ -69,20 +73,3 @@ const Container = (props) => {
      
 export default Container;
 
-// const Container = (props) => (
-   
-//         <div id="container">
-            
-            
-            
-            
-//             <Hero
-//               page={props.page}
-//             />
-//             <Aside />
-
-//         </div>
-//       )
-      
-// export default Container;
-  

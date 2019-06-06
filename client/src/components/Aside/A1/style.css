@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+@media (min-width: 1024px) {
+    #a1 {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #truffle-shuffle {
+        height: 100%;
+    }
+}

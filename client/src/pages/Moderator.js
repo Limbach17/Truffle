@@ -9,8 +9,9 @@ import "../map.css";
 class Moderator extends Component {
 
     state = {
+        page: "moderator",
         plants: [],
-        title: "Moderator view"
+        title: "Moderator view",
       };
     
       componentDidMount() {
@@ -18,7 +19,7 @@ class Moderator extends Component {
       }
 
       loadPlants = () => {
-        API.getGenus(this.state.selection)
+        API.getAll()
           .then(res => {
             console.log(res);
             this.setState({ plants: res.data});
@@ -35,7 +36,8 @@ class Moderator extends Component {
                  title={this.state.title}
                  />
                 <Header />
-                <Container />
+                <Container 
+                  page={this.state.page}/>
             </div>
         );
     }

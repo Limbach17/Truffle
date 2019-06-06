@@ -12,3 +12,43 @@
         align-items: flex-start;
     }
 }
+
+@media (min-width: 1440px) {
+    #container {
+        width: 85%;
+        height: 560px;
+        margin-left: 7.5%;
+        /* overflow: scroll; */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
+
+@media (min-width: 1680px) {
+    #container {
+        width: 85%;
+        height: 710px;
+        margin-left: 7.5%;
+        /* overflow: scroll; */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
+
+@media (min-width: 1920px) {
+    #container {
+        width: 85%;
+        height: 740px;
+        margin-left: 7.5%;
+        /* overflow: scroll; */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
+
