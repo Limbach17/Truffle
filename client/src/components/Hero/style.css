@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 @media (min-width: 1024px) {
-    #hero {
+    .hero {
         width: 52%;
         height: 100%;
         display: flex;

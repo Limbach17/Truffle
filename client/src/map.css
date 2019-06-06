@@ -48,6 +48,19 @@ body {
         color: inherit;
     }
     
+    .expanded-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .expanded-input {
+        margin: 10px 0px 10px 0px;
+        padding: 10px 0px 10px 0px;
+    }
+
     .header-link {
         text-decoration: none;
         color: inherit;

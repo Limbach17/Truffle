@@ -94,11 +94,13 @@ app.get("/genus/:letter", function(req, res) {
 
 //////// CREATE A NEW PLANT ENTRY //////////
 
-app.post("/submit", function(req, res) {
+app.post("/plants", function(req, res) {
+  console.log(req.body);
+  console.log("Hello");
   db.Plant.create(req.body)
-    .then(function(dbPlant) {
-      return db.Library.findOneAndUpdate({}, { $push: { plants: dbPlant._id } }, { new: true });
-    })
+    // .then(function(dbPlant) {
+    //   return db.Library.findOneAndUpdate({name: "truffle-proto-library"}, { $push: { plants: dbPlant._id } }, { new: true });
+    // })
     .then(function(dbLibrary) {
       res.json(dbLibrary);
     })

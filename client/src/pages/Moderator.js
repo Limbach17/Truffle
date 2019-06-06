@@ -12,6 +12,8 @@ class Moderator extends Component {
         page: "moderator",
         plants: [],
         title: "Moderator view",
+        option01: "Add an entry",
+        option02: "Edit an existing item"
       };
     
       componentDidMount() {
@@ -37,7 +39,10 @@ class Moderator extends Component {
                  />
                  <hr />
                 <Container 
-                  page={this.state.page}/>
+                  page={this.state.page}
+                  option01={this.state.option01}
+                  option02={this.state.option02}
+                  />
             </div>
         );
     }

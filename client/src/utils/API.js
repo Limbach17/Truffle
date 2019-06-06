@@ -12,5 +12,10 @@ export default {
   
   getGenus: function(letter) {
     return axios.get("/genus/" + letter);
+  },
+
+  addPlant: function(data) {
+    console.log(data);
+  return axios.post("/plants", data);
   }
 };

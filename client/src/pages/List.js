@@ -18,7 +18,12 @@ class List extends Component {
       };
 
       componentDidMount() {
-        this.setState({selection: "A"});
+        // const { letter} = this.props.match.params
+    
+        // fetch(`localhost:3000/list/genus/${letter}`)
+        //   .then((selection) => {
+        //     this.setState(() => ({ selection }))
+        //   });
         this.loadPlants();
       }
 
@@ -29,18 +34,9 @@ class List extends Component {
         this.setState({selection: letter});
     }
 
-      // setSelection = (event) => {
-      //     event.preventDefault();
-      //     console.log("Hi");
-      //     console.log(event.target.getAttribute("value"));
-      //     const letter = event.target.getAttribute("value");
-      //     console.log(letter);
-      //     this.setState({selection: letter});
-      // }
-
       loadPlants = () => {
         let letter = this.state.selection;
-        API.getGenus(this.state.selection)
+        API.getGenus(letter)
           .then(res => {
             console.log(res);
             this.setState({ plants: res.data});

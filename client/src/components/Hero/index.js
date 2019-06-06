@@ -1,5 +1,5 @@
 import React from "react";
-// import Flatlist from "../Flatlist";
+import SubForm from "../SubForm";
 import "../../map.css";
 import "./style.css";
 
@@ -34,7 +34,8 @@ const Hero = (props) => {
                 );
             case "moderator":
               return (
-                     <div id="form">
+                     <div className="hero">
+                        <SubForm />
                      </div>
                );
 
