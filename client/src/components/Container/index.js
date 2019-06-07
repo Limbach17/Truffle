@@ -1,15 +1,16 @@
 import React from "react";
 import Hero from "../Hero";
 import Aside from "../Aside";
-import SubForm from "../SubForm";
 import "../../map.css";
 import "./style.css";
 
 const Container = (props) => {
+
+
   const {page} = props;
   const {plants} = props;
-  // const {option01} = props;
-  // const {option02} = props;
+  const {option01} = props;
+  const {option02} = props;
        {
           switch(page){
               case "home":
@@ -43,7 +44,9 @@ const Container = (props) => {
                 return (
                       <div id="container">
                           <Hero 
-                            page={page}
+                            option01 = {option01}
+                            option02 = {option02}
+                            page = {page}
                             />
                         </div>
                  );

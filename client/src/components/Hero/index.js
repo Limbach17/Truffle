@@ -6,6 +6,8 @@ import "./style.css";
 const Hero = (props) => {
    const {plants}=props;
    const {page}=props;
+   const {option01} = props;
+   const {option02} = props;
         {
          switch(page){
             case "home":
@@ -33,8 +35,12 @@ const Hero = (props) => {
               </div>
                 );
             case "moderator":
+                  // state = {
+                  //    option: ""
+                  //  }
               return (
                      <div className="hero">
+                        <h3><button>{option01}</button> or <button>{option02}</button></h3>
                         <SubForm />
                      </div>
                );

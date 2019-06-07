@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import axios from "axios";
 import "../../map.css";
 import "./style.css";
 
@@ -9,9 +10,35 @@ class SubForm extends Component {
     genus: "",
     species: "",
     common_names: [],
-    tropicos_id: null
+    tropicos_id: null,
+    ////
+    file: null,
+    images: []
 
   };
+
+  ////////////
+  submitFile = (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+    formData.append('file', this.state.file[0]);
+    console.log(formData);
+    axios.post(`/test-upload`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    }).then(response => {
+      console.log("GOOd");
+      // handle your response;
+    }).catch(error => {
+      console.log("BAD");
+      // handle your error
+    });
+  }
+
+  handleFileUpload = (event) => {
+    this.setState({file: event.target.files});
+  }
 
   handleInputChange = event => {
     
@@ -25,6 +52,8 @@ class SubForm extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+    
+    this.submitFile(event);
 
     API.addPlant(
       {
@@ -46,7 +75,10 @@ class SubForm extends Component {
       genus: "",
       species: "",
       common_names: [],
-      tropicos_id: null  
+      tropicos_id: null,
+      ////
+      file: null,
+      images: [] 
     });
   };
 
@@ -101,6 +133,12 @@ class SubForm extends Component {
                 onChange={this.handleInputChange}
                 type="integer"
                 placeholder="200014"
+            />
+
+            <h4>Enter a file path to upload an image*</h4>
+            <input className="expanded-input"
+                type="file"
+                onChange={this.handleFileUpload}
             />
           <button onClick={this.handleFormSubmit}>Submit</button>
         </form>

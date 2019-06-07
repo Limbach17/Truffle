@@ -7,22 +7,22 @@ function SupportNav () {
     return (
         <ul id="support-links">
             <li className="support-list">
-                <a id="support-link" href="/503" target="blank">Advanced Search</a>
+                <a id="support-link" href="/503">Advanced Search</a>
                 <p className="link-space">|</p>
             </li>
 
             <li className="support-list">
-                <a id="support-link" href="/503" target="blank">Support</a>
+                <a id="support-link" href="/503">Support</a>
                 <p className="link-space">|</p>
             </li>
 
             <li className="support-list">
-                <a id="support-link" href="/503" target="blank"> About</a>
+                <a id="support-link" href="/503"> About</a>
                 <p className="link-space">|</p>
             </li>
 
             <li className="support-list">
-                <a id="support-link" href="/moderator" target="blank">Login</a>
+                <a id="support-link" href="/moderator">Moderator</a>
             </li>
             
         </ul>

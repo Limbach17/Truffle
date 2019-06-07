@@ -41,7 +41,7 @@ class Moderator extends Component {
                 <Container 
                   page={this.state.page}
                   option01={this.state.option01}
-                  option02={this.state.option02}
+                  option02={this.state.option02}/>
                   />
             </div>
         );

@@ -38,6 +38,10 @@ var plantSchema = new Schema({
         required: true
     },
 
+    images: {
+        type: Array
+    },
+
     moderator: [
         {
           type: Schema.Types.ObjectId,

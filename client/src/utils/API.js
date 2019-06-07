@@ -18,4 +18,5 @@ export default {
     console.log(data);
   return axios.post("/plants", data);
   }
+  
 };

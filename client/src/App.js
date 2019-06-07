@@ -14,6 +14,7 @@ function App() {
           <Switch>
           <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
+            {/* <Route exact path="/test-upload" component={Test} /> */}
             <Route exact path="/list/genus/:selection" component={List} />
             <Route exact path="/profile/:id" component={Plant} />
             <Route exact path="/moderator" component={Moderator} />

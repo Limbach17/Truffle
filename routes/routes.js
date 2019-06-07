@@ -1,7 +1,91 @@
 var db = require("../models/");
-
 const express = require("express");
 var app = express();
+
+////AWS stuff////
+
+const AWS = require('aws-sdk');
+const fs = require('fs');
+const fileType = require('file-type');
+const bluebird = require('bluebird');
+const multiparty = require('multiparty');
+
+AWS.config.update({
+  region: "us-east-2",
+  accessKeyId: "AKIAIGLOAVFGDC7QEBUQ",
+  secretAccessKey: "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",
+});
+
+const s3 = new AWS.S3();
+
+AWS.config.setPromisesDependency(bluebird);
+console.log(AWS.config);
+
+
+
+const uploadFile = (buffer, name, type) => {
+  const params = {
+    ACL: 'public-read',
+    Body: buffer,
+    Bucket: "truffle-shuffle",
+    ContentType: type.mime,
+    Key: `${name}.${type.ext}`
+  };
+  return s3.upload(params).on('httpUploadProgress', function (evt) {
+    var progress = Math.round(evt.loaded / evt.total) * 100;
+    console.log('The progress ia '+progress);
+
+}).
+send(function (err, data) {
+    console.log(err, data);
+
+    //handle error
+    if (err) {
+        console.log("Error", err);
+        req.flash('error_msg', 'failed to upload the file meta-data');
+        // res.redirect('/upload');
+    }
+
+    //success
+    if (data) {
+        console.log("Uploaded in:", data.Location); //url of the file on amazon s3
+        //build ad object
+        // var person = new Person();
+        // person.country = country;
+        // person.save(function (err) {
+        //     if (err) {
+        //         req.flash('error_msg', 'failed to upload the file meta-data');
+        //         // res.redirect('/upload');
+        //     } else {
+        //        // Do something - give alert to user, e.g. u can use   flash messages as well
+        //     }
+        // });
+    }
+});
+
+}
+
+app.post('/test-upload', (request, response) => {
+  const form = new multiparty.Form();
+    form.parse(request, async (error, fields, files) => {
+      if (error) throw new Error(error);
+      try {
+        const path = files.file[0].path;
+        console.log(path);
+        const buffer = fs.readFileSync(path);
+        const type = fileType(buffer);
+        console.log(type);
+        const timestamp = Date.now().toString();
+        const fileName = `Truffle-proto-library/${timestamp}-lg`;
+        console.log(fileName);
+        const data = await uploadFile(buffer, fileName, type);
+        return response.status(200).send(data);
+      } catch (error) {
+        return response.status(400).send(error);
+      }
+    });
+});
+
 
 //////// CREATE A NEW LIBRARY //////////
 
