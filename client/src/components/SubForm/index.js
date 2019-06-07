@@ -12,8 +12,8 @@ class SubForm extends Component {
     common_names: [],
     tropicos_id: null,
     ////
-    file: null,
-    images: []
+    file: null
+    // images: []
 
   };
 
@@ -22,8 +22,12 @@ class SubForm extends Component {
     event.preventDefault();
     const formData = new FormData();
     formData.append('file', this.state.file[0]);
+    // formData.append('genus', this.state.genus);
+    // formData.append('species', this.state.species);
+    // formData.append('common_names', this.state.common_names);
+    // formData.append('tropicos_id', this.state.tropicos_id);
     console.log(formData);
-    axios.post(`/test-upload`, formData, {
+    axios.post(`/plants`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
@@ -62,7 +66,8 @@ class SubForm extends Component {
       scientific_name: this.state.genus + " " + this.state.species,
       genus: this.state.genus,
       species: this.state.species,
-      tropicos_name_id: this.state.tropicos_id
+      tropicos_name_id: this.state.tropicos_id,
+      images: "https://truffle-shuffle.s3.us-east-2.amazonaws.com" + this.state.file[0].name
     }
     )
         .then(res => {
