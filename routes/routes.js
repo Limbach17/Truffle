@@ -58,9 +58,17 @@ send(function (err, data) {
 
 app.post('/image-upload', (request, response) => {
   const form = new multiparty.Form();
+  var timestamp;
+  form.on('field', function(name, value) {
+    if (name === 'timestamp') {
+      timestamp = value;
+    }
+  });
     form.parse(request, async (error, fields, files) => {
+      
       if (error) throw new Error(error);
       try {
+        
         const path = files.file[0].path;
         const buffer = fs.readFileSync(path);
         const type = fileType(buffer);
