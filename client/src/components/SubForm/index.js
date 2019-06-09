@@ -22,7 +22,7 @@ class SubForm extends Component {
     event.preventDefault();
     const formData = new FormData();
     formData.append('file', this.state.file[0]);
-    // formData.append('timestamp', current);
+    formData.append('timestamp', this.state.timestamp);
     console.log(formData);
     axios.post(`/image-upload`, formData, {
       headers: {
@@ -39,8 +39,8 @@ class SubForm extends Component {
         scientific_name: this.state.genus + " " + this.state.species,
         genus: this.state.genus,
         species: this.state.species,
-        tropicos_name_id: this.state.tropicos_id
-        // images: ["https://truffle-shuffle.s3.us-east-2.amazonaws.com/Truffle-proto-library/" + current+ "lg.jpg"]
+        tropicos_name_id: this.state.tropicos_id,
+        images: ["https://truffle-shuffle.s3.us-east-2.amazonaws.com/Truffle-proto-library/" + this.state.timestamp + "-lg.jpg"]
       }
       )
           .then(res => {
@@ -55,6 +55,7 @@ class SubForm extends Component {
         common_names: [],
         tropicos_id: null,
         file: null,
+        timestamp: "",
         images: [] 
       });
 
@@ -141,6 +142,9 @@ class SubForm extends Component {
                 type="file"
                 onChange={this.handleFileUpload}
             />
+
+            <input name="timestamp" value={Date.now().toString()} type="hidden" onChange={this.handleInputChange} />
+
           <button onClick={this.handleFormSubmit}>Submit</button>
         </form>
       </div>

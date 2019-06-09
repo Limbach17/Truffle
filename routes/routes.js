@@ -64,7 +64,7 @@ app.post('/image-upload', (request, response) => {
         const path = files.file[0].path;
         const buffer = fs.readFileSync(path);
         const type = fileType(buffer);
-        const timestamp = Date.now().toString();
+        // const timestamp = Date.now().toString();
         const fileName = `Truffle-proto-library/${timestamp}-lg`;
         const data = await uploadFile(buffer, fileName, type);
 
