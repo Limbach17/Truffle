@@ -18,9 +18,11 @@ class SubForm extends Component {
 
   ////////////
   submitFile = (event) => {
+    // var current = Date.now().toString();
     event.preventDefault();
     const formData = new FormData();
     formData.append('file', this.state.file[0]);
+    // formData.append('timestamp', current);
     console.log(formData);
     axios.post(`/image-upload`, formData, {
       headers: {
@@ -38,6 +40,7 @@ class SubForm extends Component {
         genus: this.state.genus,
         species: this.state.species,
         tropicos_name_id: this.state.tropicos_id
+        // images: ["https://truffle-shuffle.s3.us-east-2.amazonaws.com/Truffle-proto-library/" + current+ "lg.jpg"]
       }
       )
           .then(res => {
