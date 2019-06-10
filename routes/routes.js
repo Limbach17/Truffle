@@ -152,7 +152,7 @@ app.get("/plants", function(req, res) {
 
 app.get("/plant/:id", function(req, res) {
   const plantId = req.params.id;
-  db.Plant.find({id: plantId})
+  db.Plant.findById({_id: plantId})
     .then(function(dbPlant) {
       res.json(dbPlant);
     })
