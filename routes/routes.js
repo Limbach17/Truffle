@@ -58,11 +58,12 @@ send(function (err, data) {
 
 app.post('/image-upload', (request, response) => {
   const form = new multiparty.Form();
-  var timestamp;
-  form.on('field', function(name, value) {
-    if (name === 'timestamp') {
-      timestamp = value;
-    }
+  var uuid;
+    form.on('field', function(name, value) {
+      if (name === 'uuid') {
+        uuid = value;
+      }
+      
   });
     form.parse(request, async (error, fields, files) => {
       
@@ -73,7 +74,7 @@ app.post('/image-upload', (request, response) => {
         const buffer = fs.readFileSync(path);
         const type = fileType(buffer);
         // const timestamp = Date.now().toString();
-        const fileName = `Truffle-proto-library/${timestamp}-lg`;
+        const fileName = `Truffle-proto-library/${uuid}-lg`;
         const data = await uploadFile(buffer, fileName, type);
 
         console.log("This is the" + data);

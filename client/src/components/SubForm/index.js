@@ -12,17 +12,25 @@ class SubForm extends Component {
     common_names: [],
     tropicos_id: null,
     file: null,
+    uuid: "",
     images: []
 
   };
 
+  componentDidMount(){
+    const uuidv4 = require('uuid/v4');
+
+    this.setState({uuid: uuidv4()})
+  }
+
   ////////////
   submitFile = (event) => {
-    // var current = Date.now().toString();
     event.preventDefault();
     const formData = new FormData();
     formData.append('file', this.state.file[0]);
-    formData.append('timestamp', this.state.timestamp);
+    formData.append('uuid', this.state.uuid);
+    // formData.append('genus', this.state.genus);
+    // formData.append('species', this.state.species);
     console.log(formData);
     axios.post(`/image-upload`, formData, {
       headers: {
@@ -40,7 +48,7 @@ class SubForm extends Component {
         genus: this.state.genus,
         species: this.state.species,
         tropicos_name_id: this.state.tropicos_id,
-        images: ["https://truffle-shuffle.s3.us-east-2.amazonaws.com/Truffle-proto-library/" + this.state.timestamp + "-lg.jpg"]
+        images: ["https://truffle-shuffle.s3.us-east-2.amazonaws.com/Truffle-proto-library/" + this.state.uuid + "-lg.jpg"]
       }
       )
           .then(res => {
@@ -55,7 +63,6 @@ class SubForm extends Component {
         common_names: [],
         tropicos_id: null,
         file: null,
-        timestamp: "",
         images: [] 
       });
 
@@ -143,7 +150,7 @@ class SubForm extends Component {
                 onChange={this.handleFileUpload}
             />
 
-            <input name="timestamp" value={Date.now().toString()} type="hidden" onChange={this.handleInputChange} />
+            {/* <input name="timestamp" value={Date.now().toString()} type="hidden" onChange={this.handleInputChange} /> */}
 
           <button onClick={this.handleFormSubmit}>Submit</button>
         </form>
