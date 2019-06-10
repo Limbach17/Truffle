@@ -11,31 +11,63 @@ class SubForm extends Component {
     species: "",
     common_names: [],
     tropicos_id: null,
-    ////
-    file: null
-    // images: []
+    file: null,
+    uuid: "",
+    images: []
 
   };
+
+  componentDidMount(){
+    const uuidv4 = require('uuid/v4');
+
+    this.setState({uuid: uuidv4()})
+  }
 
   ////////////
   submitFile = (event) => {
     event.preventDefault();
     const formData = new FormData();
     formData.append('file', this.state.file[0]);
+    formData.append('uuid', this.state.uuid);
     // formData.append('genus', this.state.genus);
     // formData.append('species', this.state.species);
-    // formData.append('common_names', this.state.common_names);
-    // formData.append('tropicos_id', this.state.tropicos_id);
     console.log(formData);
-    axios.post(`/plants`, formData, {
+    axios.post(`/image-upload`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
     }).then(response => {
-      console.log("GOOd");
+      console.log("Upload successful");
+      console.log("formData here" + formData.headers);
       // handle your response;
+      API.addPlant(
+        {
+        route_name: this.state.route_name,
+        common_names: this.state.route_name,
+        scientific_name: this.state.genus + " " + this.state.species,
+        genus: this.state.genus,
+        species: this.state.species,
+        tropicos_name_id: this.state.tropicos_id,
+        images: ["https://truffle-shuffle.s3.us-east-2.amazonaws.com/Truffle-proto-library/" + this.state.uuid + "-lg.jpg"]
+      }
+      )
+          .then(res => {
+            console.log(res);
+          })
+          .catch(err => console.log(err));
+        
+      this.setState({
+        route_name: "",
+        genus: "",
+        species: "",
+        common_names: [],
+        tropicos_id: null,
+        file: null,
+        images: [] 
+      });
+
     }).catch(error => {
-      console.log("BAD");
+      console.log("Unsuccessful upload");
       // handle your error
     });
   }
@@ -56,35 +88,7 @@ class SubForm extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    
     this.submitFile(event);
-
-    API.addPlant(
-      {
-      route_name: this.state.route_name,
-      common_names: this.state.route_name,
-      scientific_name: this.state.genus + " " + this.state.species,
-      genus: this.state.genus,
-      species: this.state.species,
-      tropicos_name_id: this.state.tropicos_id,
-      images: "https://truffle-shuffle.s3.us-east-2.amazonaws.com" + this.state.file[0].name
-    }
-    )
-        .then(res => {
-          console.log(res);
-        })
-        .catch(err => console.log(err));
-      
-    this.setState({
-      route_name: "",
-      genus: "",
-      species: "",
-      common_names: [],
-      tropicos_id: null,
-      ////
-      file: null,
-      images: [] 
-    });
   };
 
   render() {
@@ -145,6 +149,9 @@ class SubForm extends Component {
                 type="file"
                 onChange={this.handleFileUpload}
             />
+
+            {/* <input name="timestamp" value={Date.now().toString()} type="hidden" onChange={this.handleInputChange} /> */}
+
           <button onClick={this.handleFormSubmit}>Submit</button>
         </form>
       </div>

@@ -4,8 +4,9 @@ import "../../map.css";
 import "./style.css";
 
 const Hero = (props) => {
-   const {plants}=props;
-   const {page}=props;
+   const {plant} = props;
+   const {plants} = props;
+   const {page} = props;
    const {option01} = props;
    const {option02} = props;
         {
@@ -24,7 +25,7 @@ const Hero = (props) => {
                      <ul>
                         {plants.map(plant => (
                            <li key={plant._id}>
-                                 <a className="profile-link" href={"/profile/" + plant._id}>
+                                 <a className="profile-link" href={"/profile/" + plant._id} value={plant._id}>
                                  <span className="scientific-name">{plant.scientific_name}</span> -
                                  <span>{plant.common_names}</span>
                                  </a>
@@ -34,6 +35,13 @@ const Hero = (props) => {
       
               </div>
                 );
+            case "profile":
+              return (
+                     <div className="hero">
+                        <p>Hi</p>
+                        <img src={plant.images} alt="plant-profile-image" />
+                     </div>
+               );
             case "moderator":
                   // state = {
                   //    option: ""

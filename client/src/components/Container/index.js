@@ -5,8 +5,7 @@ import "../../map.css";
 import "./style.css";
 
 const Container = (props) => {
-
-
+  const {plant} = props;
   const {page} = props;
   const {plants} = props;
   const {option01} = props;
@@ -37,6 +36,10 @@ const Container = (props) => {
               case "profile":
                 return (
                       <div id="container">
+                        <Hero
+                          page = {page}
+                          plant = {plant}  
+                        />
                           
                       </div>
                  );

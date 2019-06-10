@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import Nav from "../components/Nav";
 import Title from "../components/Title";
-import Header from "../components/Header";
+import Container from "../components/Container";
 import API from "../utils/API";
 import "../map.css";
+// import { runInThisContext } from "vm";
 
 class Plant extends Component {
     state = {
-        plants: [],
+        page: "profile",
+        plant: [],
         title: "Plant profile",
-        name: ""
+        selection: this.props.match.params.selection
       };
     
       componentDidMount() {
@@ -17,10 +19,12 @@ class Plant extends Component {
       }
 
       loadPlants = () => {
-        API.getOne(this.state.selection)
+        const {selection} = this.state;
+
+        API.getOne(selection)
           .then(res => {
             console.log(res);
-            this.setState({ plants: res.data});
+            this.setState({ plant: res.data});
           }
           )
           .catch(err => console.log(err));
@@ -33,7 +37,10 @@ class Plant extends Component {
                 <Title 
                     title={this.state.title}
                     />
-                <Header />
+                <Container 
+                  page={this.state.page}
+                  plant={this.state.plant}
+                />
             </div>
         );
     }

@@ -56,52 +56,25 @@ send(function (err, data) {
 
 }
 
-// app.post('/plants', (request, response) => {
-//   const form = new multiparty.Form();
-//     form.parse(request, async (error, fields, files) => {
-//       if (error) throw new Error(error);
-//       try {
-//         const path = files.file[0].path;
-//         console.log(path);
-//         const buffer = fs.readFileSync(path);
-//         const type = fileType(buffer);
-//         console.log(type);
-//         const timestamp = Date.now().toString();
-//         const fileName = `Truffle-proto-library/${timestamp}-lg`;
-//         console.log(fileName);
-//         const data = await uploadFile(buffer, fileName, type);
-
-//         console.log(data);
-
-//         db.Plant.create(req.body)
-//         .then(function(dbPlant) {
-//           return db.Library.findOneAndUpdate({name: "truffle-proto-library"}, { $push: { plants: dbPlant._id } }, { new: true });
-//         })
-//         .then(function(dbLibrary) {
-//           res.json(dbLibrary);
-//         })
-//         .catch(function(err) {
-//           res.json(err);
-//         });
-
-//         return response.status(200).send(data);
-//       } catch (error) {
-//         return response.status(400).send(error);
-//       }
-//     });
-// });
-
-
-app.post('/plants', (request, response) => {
+app.post('/image-upload', (request, response) => {
   const form = new multiparty.Form();
+  var uuid;
+    form.on('field', function(name, value) {
+      if (name === 'uuid') {
+        uuid = value;
+      }
+      
+  });
     form.parse(request, async (error, fields, files) => {
+      
       if (error) throw new Error(error);
       try {
+        
         const path = files.file[0].path;
         const buffer = fs.readFileSync(path);
         const type = fileType(buffer);
-        const timestamp = Date.now().toString();
-        const fileName = `Truffle-proto-library/${timestamp}-lg`;
+        // const timestamp = Date.now().toString();
+        const fileName = `Truffle-proto-library/${uuid}-lg`;
         const data = await uploadFile(buffer, fileName, type);
 
         console.log("This is the" + data);
@@ -179,7 +152,7 @@ app.get("/plants", function(req, res) {
 
 app.get("/plant/:id", function(req, res) {
   const plantId = req.params.id;
-  db.Plant.find({id: plantId})
+  db.Plant.findById({_id: plantId})
     .then(function(dbPlant) {
       res.json(dbPlant);
     })
