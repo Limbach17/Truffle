@@ -28,7 +28,7 @@
     "file-type": "^11.1.0",
     "fs": "0.0.1-security",
     "if-env": "^1.0.4",
-    "mongoose": "^5.5.12",
+    "mongoose": "^5.7.5",
     "multiparty": "^4.2.1",
     "uuid": "^3.3.2"
   }
